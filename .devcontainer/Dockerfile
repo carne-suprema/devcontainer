@@ -21,6 +21,9 @@ RUN apt update && apt install -y less \
   aggregate \
   jq
 
+# Install ast-grep
+RUN npm install -g @ast-grep/cli
+
 # Ensure default node user has access to /usr/local/share
 RUN mkdir -p /usr/local/share/npm-global && \
   chown -R node:node /usr/local/share
